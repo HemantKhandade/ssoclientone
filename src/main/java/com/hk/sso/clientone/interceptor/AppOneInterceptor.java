@@ -231,7 +231,7 @@ public class AppOneInterceptor extends HandlerInterceptorAdapter {
 	}
 
 	public String getRedirectUrl(HttpServletRequest request) {
-		String redirectUrl="http://hvdivd18mis1110.itservices.sbc.com:8090/sso/redirectlogin?client_id=ssoclient&subject=hk128b&return_url=hvdivd18mis1110.itservices.sbc.com:8080/opus/home";
+		String redirectUrl="http://<servername>:8090/sso/redirectlogin?client_id=ssoclient&subject=hk127b&return_url=<returnservername>:8080/opus/home";
 		return redirectUrl;
 	}
 
@@ -243,7 +243,7 @@ public class AppOneInterceptor extends HandlerInterceptorAdapter {
 		String domainNamePrefix = domainName.substring(domainName.indexOf("."), domainName.length());
 		System.out.println(domainName + " :: " + domainNamePrefix);
 		cookie.setDomain(domainNamePrefix);
-		//cookie.setDomain("hvdivd18mis1110.itservices.sbc.com");
+		//cookie.setDomain("servername");
 		cookie.setHttpOnly(true);
 		cookie.setPath("/");
 		response.addCookie(cookie);
